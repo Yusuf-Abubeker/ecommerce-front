@@ -1,16 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { SimpleGrid, Text, Button, Box } from "@chakra-ui/react";
 import useProducts from "../../hooks/useProducts";
 import ProductCards from "./ProductCards";
 import ProductCardSkeleton from "./ProductCardSkeleton";
 
-const ProductsGrid = ({ selectedCategory, selectedPlatform, searchText }) => {
+const ProductsGrid = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const { error, products, isLoading, totalPages } = useProducts(
-    selectedCategory,
-    selectedPlatform,
-    searchText,
     currentPage// Pass the current page to the hook
   );
 

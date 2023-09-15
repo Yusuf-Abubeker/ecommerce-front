@@ -1,12 +1,19 @@
 import useCategories from "../../hooks/useCategories";
 import { Button, Heading, List, ListItem, Spinner } from "@chakra-ui/react";
-const CategoryList = ({ selectedCategory, onSelectCategory }) => {
+import useProductQueryStore from "../../store";
+const CategoryList = () => {
   const { error, categories, isLoading } = useCategories();
+  const selectedCategory = useProductQueryStore(
+    (s) => s.productQuery.selectedCategory
+  );
+  const setSelectedCategory = useProductQueryStore((s) => s.setSelectedCategory);
   if (error) return null;
   if (isLoading) return <Spinner />;
   return (
     <>
-      <Heading fontSize='2xl' marginBottom={2}>Categories</Heading>
+      <Heading fontSize="2xl" marginBottom={2}>
+        Categories
+      </Heading>
       <List>
         {categories.map((category) => (
           <ListItem key={category._id}>
@@ -16,7 +23,7 @@ const CategoryList = ({ selectedCategory, onSelectCategory }) => {
                 category._id === selectedCategory?._id ? "bold" : "normal"
               }
               variant="link"
-              onClick={() => onSelectCategory(category)}
+              onClick={() => setSelectedCategory(category)}
             >
               {category.name}
             </Button>

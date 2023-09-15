@@ -1,26 +1,22 @@
 import apiClient from "../services/api-client";
 import { useQuery } from "@tanstack/react-query";
-const fetchProducts = async (
-  selectedCategory,
-  selectedPlatform,
-  searchText,
-  page
-) => {
-  const params = new URLSearchParams();
+import useProductQueryStore from "../store"; // Import your store path here
 
+const fetchProducts = async (page, productQuery) => {
+  const params = new URLSearchParams();
   params.append("page", page);
 
   let endpoint = "/products";
 
-  // Construct the endpoint based on selectedCategory or selectedPlatform
-  if (selectedCategory) {
-    endpoint += `/category/${selectedCategory._id}`;
-  } else if (selectedPlatform) {
-    endpoint += `/category/${selectedPlatform._id}`;
-  } else if (searchText) {
-    endpoint += `/search?search=${searchText}&page=${page}`;
+  // Construct the endpoint based on productQuery
+  if (productQuery.selectedCategory) {
+    endpoint += `/category/${productQuery.selectedCategory._id}`;
+  } else if (productQuery.selectedPlatform) {
+    endpoint += `/category/${productQuery.selectedPlatform._id}`;
+  } else if (productQuery.searchText) {
+    endpoint += `/search?search=${productQuery.searchText}&page=${page}`;
   }
-  if (!searchText) {
+  if (!productQuery.searchText) {
     endpoint += `?${params.toString()}`;
   }
 
@@ -28,19 +24,17 @@ const fetchProducts = async (
   return response.data;
 };
 
-const useProducts = (selectedCategory, selectedPlatform, searchText, page) => {
+const useProducts = (page) => {
+  const productQuery = useProductQueryStore((s) => s.productQuery);
+
   const {
     data: products,
     error,
     isLoading,
-  } = useQuery(
-    ["products", selectedCategory, selectedPlatform, searchText, page],
-    () => fetchProducts(selectedCategory, selectedPlatform, searchText, page),
-    {
-      keepPreviousData: true,
-      staleTime: 5 * 60 * 1000,
-    }
-  );
+  } = useQuery(["products", productQuery, page], () => fetchProducts(page, productQuery), {
+    keepPreviousData: true,
+    staleTime: 5 * 60 * 1000,
+  });
 
   return {
     products: products?.products || [],
