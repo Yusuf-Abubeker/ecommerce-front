@@ -5,6 +5,7 @@ import ExpandableText from "../components/products/ExpandableText";
 import DefinitionItem from "../components/products/DefinitionItem";
 import StarRating from "../components/products/StarRating";
 import img from "../assets/comp.jpg";
+import AddToCartButton from "../Cart/AddToCartButton";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -51,7 +52,7 @@ const ProductDetailPage = () => {
         <Text>Address : {product.data.merchantAddress}</Text>
         <Text>Contact : {product.data.merchantContact}</Text>
       </DefinitionItem>
-      <Button onClick={() => addToCart(product)}>Add to Cart</Button>
+      <AddToCartButton item={{productId: product.data._id,quantity:1}}/>
 
     </>
   );

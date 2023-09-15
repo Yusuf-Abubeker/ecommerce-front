@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Box,
   Heading,
@@ -6,27 +5,31 @@ import {
   Avatar,
   Flex,
   Button,
- 
+  Spinner,
 } from "@chakra-ui/react";
+import useProfileDetail from "../hooks/useProfileDetail";
 
 const UserProfileDetail = () => {
-  // Replace with actual user data or fetch it from an API
-  const userData = {
-    name: "John Doe",
-    username: "johndoe123",
-    email: "johndoe@example.com",
-    avatarUrl: "https://example.com/avatar.jpg",
-  };
+  const { userProfile, isLoading, error } = useProfileDetail();
+  console.log(userProfile);
+  if (isLoading) return <Spinner />;
+  if (error) return <Text>something went wrong</Text>;
 
   return (
     <Box p={4}>
       <Heading size="lg">User Profile</Heading>
       <Flex align="center" mt={4}>
-        <Avatar size="xl" name={userData.name} src={userData.avatarUrl} />
+        <Avatar
+          size="xl"
+          name={userProfile.profile.name}
+          src={userProfile.profile.profilePicture}
+        />
         <Box ml={4}>
-          <Text fontSize="xl">{userData.name}</Text>
-          <Text fontSize="md">@{userData.username}</Text>
-          <Text fontSize="sm">{userData.email}</Text>
+          <Text fontSize="xl">{userProfile.profile.name}</Text>
+          <Text fontSize="md">{userProfile.profile.contact}</Text>
+          <Text fontSize="sm">{userProfile.profile.address}</Text>
+          <Text fontSize="sm">{userProfile.email}</Text>
+          <Text fontSize="sm">{userProfile.email}</Text>
         </Box>
       </Flex>
       <Button

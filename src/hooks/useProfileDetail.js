@@ -5,7 +5,7 @@ import apiClient from "../services/api-client";
 const useProfileDetail = () => {
   const navigate = useNavigate();
   const {
-    data: cartItems,
+    data: userProfile,
     error,
     isLoading,
   } = useQuery(["profile"], async () => {
@@ -14,7 +14,7 @@ const useProfileDetail = () => {
       navigate("/auth/login");
       return;
     }
-    const response = await apiClient.get("/carts", {
+    const response = await apiClient.get("/login/me", {
       headers: {
         "X-Auth-Token": accessToken,
       },
@@ -24,7 +24,7 @@ const useProfileDetail = () => {
   });
 
   return {
-    cartItems: cartItems || [],
+    userProfile,
     error,
     isLoading,
   };
