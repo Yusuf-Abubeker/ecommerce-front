@@ -1,0 +1,363 @@
+[
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 1",
+      "description": "This is the description for product 1",
+      "price": 10.99,
+      "stockQuantity": 100,
+      "imageURL": "https://example.com/product1.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435a",
+        "name": "Category 1"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 2",
+      "description": "This is the description for product 2",
+      "price": 19.99,
+      "stockQuantity": 50,
+      "imageURL": "https://example.com/product2.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435b",
+        "name": "Category 2"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 3",
+      "description": "This is the description for product 3",
+      "price": 29.99,
+      "stockQuantity": 75,
+      "imageURL": "https://example.com/product3.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435c",
+        "name": "Category 3"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 4",
+      "description": "This is the description for product 4",
+      "price": 15.99,
+      "stockQuantity": 120,
+      "imageURL": "https://example.com/product4.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435d",
+        "name": "Category 4"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 5",
+      "description": "This is the description for product 5",
+      "price": 14.99,
+      "stockQuantity": 80,
+      "imageURL": "https://example.com/product5.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435e",
+        "name": "Category 5"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 6",
+      "description": "This is the description for product 6",
+      "price": 24.99,
+      "stockQuantity": 60,
+      "imageURL": "https://example.com/product6.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435a",
+        "name": "Category 1"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 7",
+      "description": "This is the description for product 7",
+      "price": 11.99,
+      "stockQuantity": 90,
+      "imageURL": "https://example.com/product7.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435b",
+        "name": "Category 2"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 8",
+      "description": "This is the description for product 8",
+      "price": 22.99,
+      "stockQuantity": 70,
+      "imageURL": "https://example.com/product8.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435c",
+        "name": "Category 3"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 9",
+      "description": "This is the description for product 9",
+      "price": 18.99,
+      "stockQuantity": 110,
+      "imageURL": "https://example.com/product9.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435d",
+        "name": "Category 4"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 10",
+      "description": "This is the description for product 10",
+      "price": 17.99,
+      "stockQuantity": 95,
+      "imageURL": "https://example.com/product10.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435e",
+        "name": "Category 5"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 11",
+      "description": "This is the description for product 11",
+      "price": 32.99,
+      "stockQuantity": 40,
+      "imageURL": "https://example.com/product11.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435a",
+        "name": "Category 1"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 12",
+      "description": "This is the description for product 12",
+      "price": 12.99,
+      "stockQuantity": 130,
+      "imageURL": "https://example.com/product12.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435b",
+        "name": "Category 2"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 13",
+      "description": "This is the description for product 13",
+      "price": 28.99,
+      "stockQuantity": 55,
+      "imageURL": "https://example.com/product13.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435c",
+        "name": "Category 3"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 14",
+      "description": "This is the description for product 14",
+      "price": 13.99,
+      "stockQuantity": 75,
+      "imageURL": "https://example.com/product14.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435d",
+        "name": "Category 4"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 15",
+      "description": "This is the description for product 15",
+      "price": 26.99,
+      "stockQuantity": 65,
+      "imageURL": "https://example.com/product15.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435e",
+        "name": "Category 5"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 16",
+      "description": "This is the description for product 16",
+      "price": 14.99,
+      "stockQuantity": 85,
+      "imageURL": "https://example.com/product16.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435a",
+        "name": "Category 1"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 17",
+      "description": "This is the description for product 17",
+      "price": 21.99,
+      "stockQuantity": 50,
+      "imageURL": "https://example.com/product17.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435b",
+        "name": "Category 2"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 18",
+      "description": "This is the description for product 18",
+      "price": 18.99,
+      "stockQuantity": 70,
+      "imageURL": "https://example.com/product18.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435c",
+        "name": "Category 3"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 19",
+      "description": "This is the description for product 19",
+      "price": 19.99,
+      "stockQuantity": 60,
+      "imageURL": "https://example.com/product19.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435d",
+        "name": "Category 4"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 20",
+      "description": "This is the description for product 20",
+      "price": 16.99,
+      "stockQuantity": 90,
+      "imageURL": "https://example.com/product20.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435e",
+        "name": "Category 5"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 21",
+      "description": "This is the description for product 21",
+      "price": 22.99,
+      "stockQuantity": 80,
+      "imageURL": "https://example.com/product21.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435a",
+        "name": "Category 1"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 22",
+      "description": "This is the description for product 22",
+      "price": 20.99,
+      "stockQuantity": 110,
+      "imageURL": "https://example.com/product22.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435b",
+        "name": "Category 2"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 23",
+      "description": "This is the description for product 23",
+      "price": 25.99,
+      "stockQuantity": 45,
+      "imageURL": "https://example.com/product23.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435c",
+        "name": "Category 3"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 24",
+      "description": "This is the description for product 24",
+      "price": 14.99,
+      "stockQuantity": 130,
+      "imageURL": "https://example.com/product24.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435d",
+        "name": "Category 4"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 25",
+      "description": "This is the description for product 25",
+      "price": 27.99,
+      "stockQuantity": 55,
+      "imageURL": "https://example.com/product25.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435e",
+        "name": "Category 5"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 26",
+      "description": "This is the description for product 26",
+      "price": 15.99,
+      "stockQuantity": 75,
+      "imageURL": "https://example.com/product26.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435a",
+        "name": "Category 1"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 27",
+      "description": "This is the description for product 27",
+      "price": 23.99,
+      "stockQuantity": 65,
+      "imageURL": "https://example.com/product27.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435b",
+        "name": "Category 2"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 28",
+      "description": "This is the description for product 28",
+      "price": 19.99,
+      "stockQuantity": 85,
+      "imageURL": "https://example.com/product28.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435c",
+        "name": "Category 3"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 29",
+      "description": "This is the description for product 29",
+      "price": 16.99,
+      "stockQuantity": 100,
+      "imageURL": "https://example.com/product29.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435d",
+        "name": "Category 4"
+      }
+    },
+    {
+      "merchantId": "6529554121348a84b5b09cac",
+      "name": "Product 30",
+      "description": "This is the description for product 30",
+      "price": 21.99,
+      "stockQuantity": 75,
+      "imageURL": "https://example.com/product30.jpg",
+      "category": {
+        "_id": "5f65b24b6402e5414836435e",
+        "name": "Category 5"
+      }
+    }
+  ]
+  

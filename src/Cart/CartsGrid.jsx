@@ -9,27 +9,20 @@ const CartsGrid = () => {
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
 
   return (
-    <div>
-      {error ? (
-        <Text>{error.response.data.message}</Text>
-      ) : (
-        <>
-          <SimpleGrid
-            columns={{ sm: 1, md: 1, lg: 1, xl: 1 }}
-            padding="10px"
-            spacing={3}
-          >
-            {isLoading &&
-              skeletons.map((skeleton) => (
-                <ProductCardSkeleton key={skeleton} />
-              ))}
-            {cartItems.map((items) => (
-              <CartCards key={items._id} productOnCart={items} />
-            ))}
-          </SimpleGrid>
-        </>
-      )}
-    </div>
+    <>
+      <SimpleGrid
+        columns={{ sm: 1, md: 1, lg: 1, xl: 1 }}
+        padding="10px"
+        spacing={3}
+      >
+        {isLoading &&
+          skeletons.map((skeleton) => <ProductCardSkeleton key={skeleton} />)}
+        {error && <Text>{error.response.data.message}</Text>}
+        {cartItems.map((items) => (
+          <CartCards key={items._id} productOnCart={items} />
+        ))}
+      </SimpleGrid>
+    </>
   );
 };
 

@@ -3,7 +3,7 @@ import { Box, Avatar, Text, Spinner } from "@chakra-ui/react";
 import useProfileDetail from "../../hooks/useProfileDetail";
 const ProfileDetail = () => {
   const { userProfile, isLoading, error } = useProfileDetail();
-  if (error) return <Text>{error.message}</Text>;
+  if (error) return <Avatar  />;
   if(isLoading) return <Spinner/>
 
   return (

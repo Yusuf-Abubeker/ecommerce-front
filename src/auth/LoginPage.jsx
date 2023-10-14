@@ -11,7 +11,7 @@ const LoginPage = () => {
   const passwordRef = useRef(null);
 
   // Use the useLogin hook to handle login
-  const { loginData, isLoading, error, login } = useLogin();
+  const { isLoading, error, login } = useLogin();
   const navigate = useNavigate();
 
   // Handle form submission
@@ -27,6 +27,7 @@ const LoginPage = () => {
       navigate("/");
     } catch (error) {
       // Handle login errors here
+      console.log(error)
     }
   };
 

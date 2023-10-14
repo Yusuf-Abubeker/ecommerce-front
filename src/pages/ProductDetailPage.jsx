@@ -1,14 +1,16 @@
 import { useParams } from "react-router-dom";
 import useProduct from "../hooks/useProduct";
-import { Heading, Spinner, Text, Box, Image, Button } from "@chakra-ui/react";
+import { Heading, Spinner, Text, Box, Image, Button,Flex } from "@chakra-ui/react";
 import ExpandableText from "../components/products/ExpandableText";
 import DefinitionItem from "../components/products/DefinitionItem";
 import StarRating from "../components/products/StarRating";
-import img from "../assets/comp.jpg";
 import AddToCartButton from "../Cart/AddToCartButton";
+import useNumberSelectionStore from "../hooks/useNumberSelectionStore";
+import NumberMenu from "../components/NumberMenu";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
+  const selectedNumber = useNumberSelectionStore((state) => state.selectedNumber);
 
   if (id === undefined) {
     return (
@@ -19,8 +21,8 @@ const ProductDetailPage = () => {
     );
   }
 
+
   const { data: product, isLoading, error } = useProduct(id);
-  console.log(product);
 
   if (isLoading) {
     return <Spinner />;
@@ -37,6 +39,14 @@ const ProductDetailPage = () => {
 
   return (
     <>
+      <Flex align="center">
+      <Image src={product.data.imageURL[0]} maxH="400px" maxW="30%" margin="2" />
+
+      <Flex direction="column" maxW="70%" margin="2">
+        <Image src={product.data.imageURL[1]} maxH="200px" flex="1" margin="1" />
+        <Image src={product.data.imageURL[2]} maxH="200px" flex="1" margin="1" />
+      </Flex>
+    </Flex>
       <Heading>{product.data.name}</Heading>
       <ExpandableText>{product.data.description}</ExpandableText>
       <DefinitionItem term={"Category"}>
@@ -52,7 +62,8 @@ const ProductDetailPage = () => {
         <Text>Address : {product.data.merchantAddress}</Text>
         <Text>Contact : {product.data.merchantContact}</Text>
       </DefinitionItem>
-      <AddToCartButton item={{productId: product.data._id,quantity:1}}/>
+      <NumberMenu/>
+      <AddToCartButton item={{productId: product.data._id,quantity:selectedNumber}}/>
 
     </>
   );

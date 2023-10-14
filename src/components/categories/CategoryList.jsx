@@ -7,7 +7,7 @@ const CategoryList = () => {
     (s) => s.productQuery.selectedCategory
   );
   const setSelectedCategory = useProductQueryStore((s) => s.setSelectedCategory);
-  if (error) return null;
+  if (error) return <Text>error occur</Text>;
   if (isLoading) return <Spinner />;
   return (
     <>

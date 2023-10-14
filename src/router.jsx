@@ -7,6 +7,8 @@ import Cart from "./pages/cart";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import UserProfileDetail from "./pages/UserProfileDetail";
+import Logout from "./auth/Logout";
+import CreateProduct from "./components/products/CreateProduct";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,7 +20,9 @@ const router = createBrowserRouter([
       { path: "/cart", element: <Cart /> },
       { path: "/auth/login", element: <Login /> },
       {path:"/auth/signUp",element:<SignUp/>},
-      {path:"/me",element:<UserProfileDetail/>}
+      {path:"/auth/logout",element:<Logout/>},
+      {path:"/me",element:<UserProfileDetail/>},
+      {path:"/newProduct",element:<CreateProduct/>}
     ],
   },
 ]);

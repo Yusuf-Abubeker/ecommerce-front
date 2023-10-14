@@ -11,7 +11,7 @@ const useCarts = () => {
   } = useQuery(["carts"], async () => {
     const accessToken = localStorage.getItem("accessToken");
     if (!accessToken) {
-      navigate("/auth/login");
+      //navigate("/auth/login");
       return;
     }
     const response = await apiClient.get("/carts", {

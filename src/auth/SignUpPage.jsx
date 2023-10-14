@@ -31,8 +31,8 @@ const SignUpPage = () => {
     const contact = contactRef.current.value;
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    const profilePicture = profilePictureRef.current.value;
-    const role = "buyer";
+    const profilePicture = profilePictureRef.current.files[0];
+    const role = "merchant";
 
     try {
       await signUp(role, name, address, contact, email, password, profilePicture);
@@ -40,6 +40,7 @@ const SignUpPage = () => {
       //navigate("/");
     } catch (error) {
       // Handle login errors here
+      console.log(error)
     }
   };
 
@@ -100,7 +101,7 @@ const SignUpPage = () => {
             type="file"
             accept="image/*"
             ref={profilePictureRef}
-            required
+            
           />
         </FormControl>
         <Button

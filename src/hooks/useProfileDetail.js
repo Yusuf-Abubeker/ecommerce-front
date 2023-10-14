@@ -11,7 +11,7 @@ const useProfileDetail = () => {
   } = useQuery(["profile"], async () => {
     const accessToken = localStorage.getItem("accessToken");
     if (!accessToken) {
-      navigate("/auth/login");
+      //navigate("/auth/login");
       return;
     }
     const response = await apiClient.get("/login/me", {

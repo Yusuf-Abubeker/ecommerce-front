@@ -11,7 +11,7 @@ const useAddCart = () => {
       // You can customize the API endpoint and request here
       const accessToken = localStorage.getItem("accessToken");
       if (!accessToken) {
-        navigate("/auth/login");
+       // navigate("/auth/login");
         return;
       }
 
