@@ -1,15 +1,22 @@
-import { Link } from "react-router-dom";
-import { Box } from "@chakra-ui/react";
+import React from "react";
+import { Link as RouterLink } from "react-router-dom";
+import { Button, Box } from "@chakra-ui/react";
 
 const LoginOnRight = () => {
-  // Check if the user is already logged in using local storage
-  const isLoggedIn = localStorage.getItem("accessToken") !== null;
-
   return (
     <Box>
-      
-        <Link to="/auth/login">Login</Link>
-      
+      <RouterLink to="/auth/login" style={{ textDecoration: "none" }}>
+        <Button
+          colorScheme="teal"
+          size="sm" // Change the size to "md" for a smaller button
+          borderRadius="md"
+          _hover={{
+            backgroundColor: "blue.600",
+          }}
+        >
+          Login/Signup
+        </Button>
+      </RouterLink>
     </Box>
   );
 };

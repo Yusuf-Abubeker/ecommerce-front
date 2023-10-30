@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -9,17 +9,20 @@ import {
   Select,
   VStack,
   Image,
-} from '@chakra-ui/react';
-import useAddProduct from '../../hooks/useAddProduct';
-import useCategories from '../../hooks/useCategories';
+  useToast,
+} from "@chakra-ui/react";
+import useAddProduct from "../../hooks/useAddProduct";
+import useCategories from "../../hooks/useCategories";
+import { Link } from "react-router-dom";
 
 const CreateProduct = () => {
+  const toast = useToast();
   const [product, setProduct] = useState({
-    name: '',
-    description: '',
-    price: '',
-    stockQuantity: '',
-    categoryId: '', // Use categoryId to store the selected category
+    name: "",
+    description: "",
+    price: "",
+    stockQuantity: "",
+    categoryId: "", // Use categoryId to store the selected category
     imageURL: [],
   });
 
@@ -46,6 +49,14 @@ const CreateProduct = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addProduct(product);
+    setProduct({
+      name: "",
+      description: "",
+      price: "",
+      stockQuantity: "",
+      categoryId: "",
+      imageURL: [],
+    });
   };
 
   return (
@@ -100,6 +111,11 @@ const CreateProduct = () => {
             ))}
           </Select>
         </FormControl>
+        <FormControl>
+          <FormLabel>
+            <Link to="/newCategory">to Add new Category</Link>
+          </FormLabel>
+        </FormControl>
         <VStack spacing={2}>
           <FormLabel>Upload Images (up to 3)</FormLabel>
           <Input
@@ -125,7 +141,14 @@ const CreateProduct = () => {
       </form>
       {isLoading && <div>Loading...</div>}
       {error && <div>Error: {error.response.data.error}</div>}
-      {addedProduct && <div>Product added with ID: {addedProduct._id}</div>}
+      {addedProduct &&
+        toast({
+          title: "Product added",
+          description: `Product added with ID: ${addedProduct._id}`,
+          status: "success",
+          duration: 3000, // Toast duration in milliseconds
+          isClosable: true,
+        })}
     </Box>
   );
 };

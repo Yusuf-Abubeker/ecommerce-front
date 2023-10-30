@@ -17,7 +17,7 @@ const HomePage = () => {
         lg: "200px 1fr",
       }}
     >
-      <GridItem pl="2" area={"nav"} display={{ base: "none", md: "block" }}>
+      <GridItem pl="2" area={"nav"} display={{ base: "none", md: "block" }} bgColor="ButtonShadow">
         <CategoryList />
       </GridItem>
       <GridItem pl="2" area={"main"}>
@@ -28,7 +28,7 @@ const HomePage = () => {
         </Box>
       </GridItem>
       <GridItem pl="2" bg="blue.300" area={"footer"}>
-        Footer
+        Copy Right @ 2023
       </GridItem>
     </Grid>
   );

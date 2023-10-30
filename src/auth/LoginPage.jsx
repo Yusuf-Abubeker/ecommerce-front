@@ -12,7 +12,6 @@ const LoginPage = () => {
 
   // Use the useLogin hook to handle login
   const { isLoading, error, login } = useLogin();
-  const navigate = useNavigate();
 
   // Handle form submission
   const handleSubmit = async (e) => {
@@ -23,10 +22,7 @@ const LoginPage = () => {
 
     try {
       await login(email, password);
-
-      navigate("/");
     } catch (error) {
-      // Handle login errors here
       console.log(error)
     }
   };

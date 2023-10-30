@@ -1,7 +1,10 @@
 import { useMutation } from "@tanstack/react-query";
 import apiClient from "../services/api-client";
+import { useNavigate } from "react-router-dom";
+import jwt_decode from "jwt-decode"
 
 const useLogin = () => {
+  const navigate = useNavigate();
   // Define a login mutation using useMutation
   const loginMutation = useMutation(async ({ email, password }) => {
     // Make the login request
@@ -10,11 +13,18 @@ const useLogin = () => {
       password,
     });
     const accessToken = response.data.token;
+    const decodedToken = jwt_decode(accessToken);
+    const userRole = decodedToken.role;
 
     localStorage.removeItem("accessToken");
 
     localStorage.setItem("accessToken", accessToken);
 
+    if (userRole === "merchant") {
+      navigate("/merchant");
+    } else {
+      navigate("/")
+    }
     // Return the response data
     return response.data;
   });

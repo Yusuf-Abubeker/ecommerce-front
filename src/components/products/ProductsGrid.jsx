@@ -3,18 +3,18 @@ import { SimpleGrid, Text, Button, Box } from "@chakra-ui/react";
 import useProducts from "../../hooks/useProducts";
 import ProductCards from "./ProductCards";
 import ProductCardSkeleton from "./ProductCardSkeleton";
+import { motion } from "framer-motion";
 
 const ProductsGrid = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const { error, products, isLoading, totalPages } = useProducts(
-    currentPage// Pass the current page to the hook
+    currentPage // Pass the current page to the hook
   );
 
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
 
   const handlePageChange = (newPage) => {
-    
     setCurrentPage(newPage);
   };
 
@@ -31,10 +31,24 @@ const ProductsGrid = () => {
           >
             {isLoading &&
               skeletons.map((skeleton) => (
-                <ProductCardSkeleton key={skeleton} />
+                <motion.div
+                  key={skeleton}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <ProductCardSkeleton />
+                </motion.div>
               ))}
             {products.map((product) => (
-              <ProductCards key={product._id} product={product} />
+              <motion.div
+                key={product._id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <ProductCards product={product} />
+              </motion.div>
             ))}
           </SimpleGrid>
           {totalPages > 1 && (

@@ -1,22 +1,38 @@
-import { Card, CardBody, Heading, Image, Text } from "@chakra-ui/react";
 import img from "../../assets/noImage.png";
+import { Card, CardBody, Heading, Image, Text,Box } from "@chakra-ui/react";
 import StarRating from "./StarRating";
 import { Link } from "react-router-dom";
 
 const ProductCards = ({ product }) => {
   return (
-    <Card borderRadius={10} overflow="hidden" _hover={{
-      transform: 'scale(1.03)',
-      transition: 'transform .15s ease-in'
-    }}>
-      <Image src={product.imageURL ? img : "no image"} />
-      <CardBody>
-        <Heading fontSize="2xl">
-          <Link to={'/products/'+product._id}>{product.name}</Link>
-        </Heading>
-        <StarRating rating={product.averageRating} />
-        <Text>{product.price} birr</Text>
-      </CardBody>
+    <Card
+      w="80%" // Adjust the width to your design
+      p="4" // Add some padding for spacing
+      borderWidth="1px" // Add a border
+      borderRadius="md" // Apply a slight border radius
+      overflow="hidden"
+      _hover={{
+        transform: "scale(1.02)", // Slight scaling on hover
+        shadow: "md", // Add a shadow on hover
+      }}
+    >
+      <Link to={'/products/' + product._id}>
+        <Image
+          src={product.imageURL ? img : "/noImage.png"}
+          alt={product.name}
+          objectFit="cover"
+          h="170px" // Reduce the height for a smaller card
+        />
+        <CardBody mt="2">
+          <Heading fontSize="lg" as="h2">
+            {product.name}
+          </Heading>
+          <Text fontSize="md" fontWeight="semibold" mt="1">
+            {product.price} birr
+          </Text>
+          <StarRating rating={product.averageRating} />
+        </CardBody>
+      </Link>
     </Card>
   );
 };
